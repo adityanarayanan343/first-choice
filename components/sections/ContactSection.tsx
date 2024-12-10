@@ -16,7 +16,6 @@ export function ContactSection() {
               Singapore 573969
             </p>
             <p className="mb-4">
-              Tel: (65) 6424 0423<br />
               Mobile: (65) 90690716
             </p>
             <p>

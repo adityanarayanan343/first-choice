@@ -8,17 +8,17 @@ const electricalServices = [
   {
     title: "Electrical Testing & Commissioning",
     description: "Comprehensive testing and commissioning services for electrical systems",
-    image: "https://images.unsplash.com/photo-1621905251918-48416bd8575a?q=80&w=1469"
+    image: "https://images.pexels.com/photos/257886/pexels-photo-257886.jpeg"
   },
   {
     title: "LV/MV/HV/EHV Services",
     description: "Expert services for all voltage levels",
-    image: "https://images.unsplash.com/photo-1549490349-8643362247b5?q=80&w=1470"
+    image: "https://images.pexels.com/photos/236089/pexels-photo-236089.jpeg"
   },
   {
     title: "Industrial Installation",
     description: "E&I installation works for various industries",
-    image: "https://images.unsplash.com/photo-1590959651373-a3db0f38a961?q=80&w=1470"
+    image: "https://images.pexels.com/photos/2760243/pexels-photo-2760243.jpeg"
   }
 ];
 
@@ -26,17 +26,17 @@ const mechanicalServices = [
   {
     title: "Precision Machining",
     description: "Manual Machining, CNC, Boring, Grinding & Honing",
-    image: "https://images.unsplash.com/photo-1612690669207-fed642192c40?q=80&w=1470"
+    image: "https://images.pexels.com/photos/5726837/pexels-photo-5726837.jpeg"
   },
   {
     title: "Welding Services",
     description: "Advanced welding solutions including PTA and Micro Plasma",
-    image: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=1470"
+    image: "https://images.pexels.com/photos/3825581/pexels-photo-3825581.jpeg"
   },
   {
     title: "Surface Treatment",
     description: "Thermal Spray Coating, Hard Chrome Plating, and more",
-    image: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?q=80&w=1469"
+    image: "https://images.pexels.com/photos/4490192/pexels-photo-4490192.jpeg"
   }
 ];
 
@@ -44,17 +44,17 @@ const adHocServices = [
   {
     title: "Civil Works",
     description: "Minor civil works and structural modifications",
-    image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=1470"
+    image: "https://images.pexels.com/photos/159358/construction-site-build-construction-work-159358.jpeg"
   },
   {
     title: "Air Conditioning",
     description: "Installation, maintenance and servicing of HVAC systems",
-    image: "https://unsplash.com/photos/a-person-holding-a-remote-control-in-front-of-a-wall-mounted-air-conditioner-3iLFQj2bXq0"
+    image: "https://images.pexels.com/photos/4489749/pexels-photo-4489749.jpeg"
   },
   {
     title: "Fire Protection",
     description: "Fire safety systems installation and maintenance",
-    image: "https://images.unsplash.com/photo-1599809275671-b5942cabc7a2?q=80&w=1470"
+    image: "https://images.pexels.com/photos/433989/pexels-photo-433989.jpeg"
   }
 ];
 
