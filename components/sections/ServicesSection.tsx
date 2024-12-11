@@ -3,22 +3,23 @@
 import { ServiceCard } from "@/components/ui/service-card";
 import { ServiceList } from "@/components/ui/service-list";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { motion } from "framer-motion";
 
 const electricalServices = [
   {
     title: "Electrical Testing & Commissioning",
     description: "Comprehensive testing and commissioning services for electrical systems",
-    image: "https://images.pexels.com/photos/257886/pexels-photo-257886.jpeg"
+    colorClass: "bg-[#FF6B6B]"
   },
   {
     title: "LV/MV/HV/EHV Services",
     description: "Expert services for all voltage levels",
-    image: "https://images.pexels.com/photos/236089/pexels-photo-236089.jpeg"
+    colorClass: "bg-[#4ECDC4]"
   },
   {
     title: "Industrial Installation",
     description: "E&I installation works for various industries",
-    image: "https://images.pexels.com/photos/2760243/pexels-photo-2760243.jpeg"
+    colorClass: "bg-[#45B7D1]"
   }
 ];
 
@@ -26,17 +27,17 @@ const mechanicalServices = [
   {
     title: "Precision Machining",
     description: "Manual Machining, CNC, Boring, Grinding & Honing",
-    image: "https://images.pexels.com/photos/5726837/pexels-photo-5726837.jpeg"
+    colorClass: "bg-[#96CEB4]"
   },
   {
     title: "Welding Services",
     description: "Advanced welding solutions including PTA and Micro Plasma",
-    image: "https://images.pexels.com/photos/3825581/pexels-photo-3825581.jpeg"
+    colorClass: "bg-[#FF8B94]"
   },
   {
     title: "Surface Treatment",
-    description: "Thermal Spray Coating, Hard Chrome Plating, and more",
-    image: "https://images.pexels.com/photos/4490192/pexels-photo-4490192.jpeg"
+    description: "Specialized coating solutions for industrial applications",
+    colorClass: "bg-[#9B5DE5]"
   }
 ];
 
@@ -44,87 +45,113 @@ const adHocServices = [
   {
     title: "Civil Works",
     description: "Minor civil works and structural modifications",
-    image: "https://images.pexels.com/photos/159358/construction-site-build-construction-work-159358.jpeg"
+    colorClass: "bg-[#F15BB5]"
   },
   {
     title: "Air Conditioning",
     description: "Installation, maintenance and servicing of HVAC systems",
-    image: "https://images.pexels.com/photos/4489749/pexels-photo-4489749.jpeg"
+    colorClass: "bg-[#00BBF9]"
   },
   {
     title: "Fire Protection",
-    description: "Fire safety systems installation and maintenance",
-    image: "https://images.pexels.com/photos/433989/pexels-photo-433989.jpeg"
+    description: "Comprehensive fire safety systems and solutions",
+    colorClass: "bg-[#00F5D4]"
+  },
+  {
+    title: "Plumbing Services",
+    description: "Complete plumbing solutions and maintenance",
+    colorClass: "bg-[#FEE440]"
+  },
+  {
+    title: "Renovation Works",
+    description: "Interior and exterior renovation services",
+    colorClass: "bg-[#9B5DE5]"
+  },
+  {
+    title: "Facility Management",
+    description: "Comprehensive facility maintenance and management",
+    colorClass: "bg-[#FF6B6B]"
   }
 ];
 
-const electricalAdditionalServices = [
-  "Comprehensive Electrical Maintenance",
-  "Generator Servicing",
-  "24/7 Emergency Breakdown Services",
-  "Industrial Automation Solutions"
-];
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1
+    }
+  }
+};
 
-const mechanicalAdditionalServices = [
-  "Laser Cutting",
-  "Dynamic Balancing",
-  "Non-Destructive Testing",
-  "Ceramic Polymer & Epoxy Coating"
-];
-
-const adHocAdditionalServices = [
-  "Plumbing & Sanitation Works",
-  "General Facilities Maintenance",
-  "Building Repairs",
-  "Preventive Maintenance Services"
-];
+const item = {
+  hidden: { y: 20, opacity: 0 },
+  show: { y: 0, opacity: 1 }
+};
 
 export function ServicesSection() {
   return (
-    <section className="py-16 px-4 bg-gray-50">
+    <section className="py-16 px-4 bg-gradient-to-br from-gray-50 to-gray-100">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl font-bold text-center mb-12">Our Services</h2>
+        <motion.h2 
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-4xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-600"
+        >
+          Our Services
+        </motion.h2>
+        
         <Tabs defaultValue="electrical" className="w-full">
-          <TabsList className="grid w-full grid-cols-3 mb-8">
+          <TabsList className="grid w-full grid-cols-3 mb-12">
             <TabsTrigger value="electrical">Electrical Trade</TabsTrigger>
             <TabsTrigger value="mechanical">Mechanical Trade</TabsTrigger>
             <TabsTrigger value="adhoc">Ad-Hoc Works</TabsTrigger>
           </TabsList>
           
           <TabsContent value="electrical">
-            <div className="grid md:grid-cols-3 gap-6">
+            <motion.div 
+              variants={container}
+              initial="hidden"
+              animate="show"
+              className="grid md:grid-cols-3 gap-6"
+            >
               {electricalServices.map((service, index) => (
-                <ServiceCard key={index} {...service} />
+                <motion.div key={index} variants={item}>
+                  <ServiceCard {...service} />
+                </motion.div>
               ))}
-            </div>
-            <ServiceList 
-              title="Additional Electrical Services" 
-              services={electricalAdditionalServices} 
-            />
+            </motion.div>
           </TabsContent>
 
           <TabsContent value="mechanical">
-            <div className="grid md:grid-cols-3 gap-6">
+            <motion.div 
+              variants={container}
+              initial="hidden"
+              animate="show"
+              className="grid md:grid-cols-3 gap-6"
+            >
               {mechanicalServices.map((service, index) => (
-                <ServiceCard key={index} {...service} />
+                <motion.div key={index} variants={item}>
+                  <ServiceCard {...service} />
+                </motion.div>
               ))}
-            </div>
-            <ServiceList 
-              title="Additional Mechanical Services" 
-              services={mechanicalAdditionalServices} 
-            />
+            </motion.div>
           </TabsContent>
 
           <TabsContent value="adhoc">
-            <div className="grid md:grid-cols-3 gap-6">
+            <motion.div 
+              variants={container}
+              initial="hidden"
+              animate="show"
+              className="grid md:grid-cols-3 gap-6"
+            >
               {adHocServices.map((service, index) => (
-                <ServiceCard key={index} {...service} />
+                <motion.div key={index} variants={item}>
+                  <ServiceCard {...service} />
+                </motion.div>
               ))}
-            </div>
-            <ServiceList 
-              title="Additional Ad-Hoc Services" 
-              services={adHocAdditionalServices} 
-            />
+            </motion.div>
           </TabsContent>
         </Tabs>
       </div>

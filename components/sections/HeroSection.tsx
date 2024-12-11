@@ -1,29 +1,44 @@
 "use client";
 
-import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
 
 export function HeroSection() {
   return (
-    <section className="relative h-[600px]">
-      <Image
-        src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=2070"
-        alt="Engineering background"
-        fill
-        className="object-cover brightness-50"
-        priority
-      />
-      <div className="absolute inset-0 flex flex-col items-center justify-center text-white p-4">
-        <h1 className="text-4xl md:text-6xl font-bold text-center mb-4">
+    <section className="relative min-h-[600px] hero-gradient overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-transparent" />
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="relative max-w-6xl mx-auto flex flex-col items-center justify-center min-h-[600px] px-4 text-white text-center"
+      >
+        <motion.h1 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="text-4xl md:text-6xl font-bold mb-6"
+        >
           First Choice Engineering & Construction
-        </h1>
-        <p className="text-xl md:text-2xl text-center max-w-3xl">
+        </motion.h1>
+        <motion.p 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="text-xl md:text-2xl max-w-3xl mb-8"
+        >
           Your trusted partner in engineering excellence since 2016
-        </p>
-        <Button className="mt-8" size="lg">
-          Contact Us
-        </Button>
-      </div>
+        </motion.p>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+        >
+          <Button size="lg" className="bg-white text-blue-600 hover:bg-blue-50 hover:text-blue-700">
+            Contact Us
+          </Button>
+        </motion.div>
+      </motion.div>
     </section>
   );
 }
